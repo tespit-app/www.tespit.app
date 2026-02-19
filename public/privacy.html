@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Tespit</title>
+  <meta name="description" content="Privacy Policy for Tespit, a UI inspection tool for macOS.">
+  <link rel="icon" type="image/png" href="/assets/app-icon.png">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --green: #7ad328;
+      --bg: #0a0a0a;
+      --bg-card: #141414;
+      --bg-subtle: #1a1a1a;
+      --text: #e8e8e8;
+      --text-dim: #888;
+      --border: #222;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(10, 10, 10, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .nav-brand img {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+    }
+
+    .nav-brand span {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 140px 32px 80px;
+    }
+
+    .content h1 {
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+    }
+
+    .content .updated {
+      color: var(--text-dim);
+      font-size: 14px;
+      margin-bottom: 48px;
+    }
+
+    .content h2 {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      margin-top: 40px;
+      margin-bottom: 12px;
+    }
+
+    .content p {
+      color: var(--text-dim);
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .content ul {
+      color: var(--text-dim);
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 16px;
+      padding-left: 24px;
+    }
+
+    .content li {
+      margin-bottom: 6px;
+    }
+
+    .content a {
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    .content a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 14px;
+    }
+
+    footer a {
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 12px 20px; }
+      .nav-links { display: none; }
+      .content { padding: 120px 20px 60px; }
+      .content h1 { font-size: 30px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-brand">
+      <img src="/assets/app-icon.png" alt="Tespit">
+      <span>Tespit</span>
+    </a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="https://github.com/tespit-app" target="_blank">GitHub</a>
+    </div>
+  </nav>
+
+  <main class="content">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: February 19, 2026</p>
+
+    <h2>Overview</h2>
+    <p>Tespit is a UI inspection tool that runs entirely on your Mac. We are committed to protecting your privacy. This policy explains how Tespit handles your data.</p>
+
+    <h2>Data Collection</h2>
+    <p>Tespit does <strong>not</strong> collect, transmit, or store any personal data. The app runs locally on your device and does not communicate with any external servers.</p>
+
+    <h2>What Tespit Accesses</h2>
+    <p>To function, Tespit uses the macOS Accessibility API to inspect UI elements on screen. This requires the Accessibility permission granted by you in System Settings. Specifically:</p>
+    <ul>
+      <li>UI element properties (labels, roles, frames) are read in real time and displayed locally.</li>
+      <li>No screen content, UI data, or inspection results are transmitted off your device.</li>
+      <li>No data is logged, cached, or persisted beyond your active session.</li>
+    </ul>
+
+    <h2>Analytics &amp; Tracking</h2>
+    <p>Tespit does not include any analytics, telemetry, crash reporting, or tracking of any kind.</p>
+
+    <h2>Third-Party Services</h2>
+    <p>Tespit does not integrate with or send data to any third-party services.</p>
+
+    <h2>Data Storage</h2>
+    <p>Tespit may store your preferences (such as window size and position) locally on your Mac using standard macOS mechanisms (UserDefaults). This data never leaves your device.</p>
+
+    <h2>Children's Privacy</h2>
+    <p>Tespit does not collect any personal information from anyone, including children under 13.</p>
+
+    <h2>Changes to This Policy</h2>
+    <p>If we update this privacy policy, we will post the revised version on this page with an updated date.</p>
+
+    <h2>Contact</h2>
+    <p>If you have any questions about this privacy policy, you can reach us at <a href="mailto:privacy@tespit.app">privacy@tespit.app</a>.</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Tespit. Built for macOS.</p>
+  </footer>
+
+</body>
+</html>
