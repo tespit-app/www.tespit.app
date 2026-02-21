@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy — Tespit</title>
-  <meta name="description" content="Privacy Policy for Tespit, a UI inspection tool for macOS.">
+  <meta name="description" content="Privacy Policy for Tespit, an AI-powered UI bug detection tool for macOS.">
   <link rel="icon" type="image/png" href="/assets/app-icon.png">
   <style>
     *, *::before, *::after {
@@ -15,19 +15,21 @@
 
     :root {
       --green: #7ad328;
-      --bg: #0a0a0a;
-      --bg-card: #141414;
-      --bg-subtle: #1a1a1a;
-      --text: #e8e8e8;
-      --text-dim: #888;
-      --border: #222;
+      --bg: #09090b;
+      --bg-card: #111113;
+      --bg-subtle: #18181b;
+      --text: #fafafa;
+      --text-secondary: #a1a1aa;
+      --text-dim: #71717a;
+      --border: rgba(255, 255, 255, 0.06);
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     nav {
@@ -36,32 +38,33 @@
       left: 0;
       right: 0;
       z-index: 100;
-      padding: 16px 32px;
+      padding: 0 32px;
+      height: 64px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgba(10, 10, 10, 0.8);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      background: rgba(9, 9, 11, 0.7);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
       border-bottom: 1px solid var(--border);
     }
 
     .nav-brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       text-decoration: none;
       color: var(--text);
     }
 
     .nav-brand img {
-      width: 36px;
-      height: 36px;
+      width: 32px;
+      height: 32px;
       border-radius: 8px;
     }
 
     .nav-brand span {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 600;
       letter-spacing: -0.3px;
     }
@@ -69,7 +72,7 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 32px;
+      gap: 24px;
     }
 
     .nav-links a {
@@ -87,7 +90,7 @@
     .content {
       max-width: 720px;
       margin: 0 auto;
-      padding: 140px 32px 80px;
+      padding: 120px 32px 80px;
     }
 
     .content h1 {
@@ -112,14 +115,14 @@
     }
 
     .content p {
-      color: var(--text-dim);
+      color: var(--text-secondary);
       font-size: 16px;
       line-height: 1.7;
       margin-bottom: 16px;
     }
 
     .content ul {
-      color: var(--text-dim);
+      color: var(--text-secondary);
       font-size: 16px;
       line-height: 1.7;
       margin-bottom: 16px;
@@ -128,6 +131,10 @@
 
     .content li {
       margin-bottom: 6px;
+    }
+
+    .content strong {
+      color: var(--text);
     }
 
     .content a {
@@ -141,21 +148,27 @@
 
     footer {
       border-top: 1px solid var(--border);
+      max-width: 720px;
+      margin: 0 auto;
       padding: 32px;
       text-align: center;
       color: var(--text-dim);
-      font-size: 14px;
+      font-size: 13px;
     }
 
     footer a {
-      color: var(--green);
+      color: var(--text-secondary);
       text-decoration: none;
     }
 
+    footer a:hover {
+      color: var(--text);
+    }
+
     @media (max-width: 640px) {
-      nav { padding: 12px 20px; }
+      nav { padding: 0 20px; }
       .nav-links { display: none; }
-      .content { padding: 120px 20px 60px; }
+      .content { padding: 100px 20px 60px; }
       .content h1 { font-size: 30px; }
     }
   </style>
@@ -165,40 +178,52 @@
   <nav>
     <a href="/" class="nav-brand">
       <img src="/assets/app-icon.png" alt="Tespit">
-      <span>Tespit</span>
+      <span>tespit</span>
     </a>
     <div class="nav-links">
       <a href="/">Home</a>
-      <a href="https://github.com/tespit-app" target="_blank">GitHub</a>
+      <a href="/support">Support</a>
+      <a href="https://github.com/tespit-app" target="_blank" rel="noopener">GitHub</a>
     </div>
   </nav>
 
   <main class="content">
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: February 19, 2026</p>
+    <p class="updated">Last updated: February 21, 2026</p>
 
     <h2>Overview</h2>
-    <p>Tespit is a UI inspection tool that runs entirely on your Mac. We are committed to protecting your privacy. This policy explains how Tespit handles your data.</p>
+    <p>Tespit is an AI-powered UI bug detection tool that runs entirely on your Mac. We are committed to protecting your privacy. This policy explains how Tespit handles your data.</p>
 
     <h2>Data Collection</h2>
-    <p>Tespit does <strong>not</strong> collect, transmit, or store any personal data. The app runs locally on your device and does not communicate with any external servers.</p>
+    <p>Tespit does <strong>not</strong> collect, transmit, or store any personal data on external servers. The app runs locally on your device and does not communicate with any external servers or cloud services.</p>
 
-    <h2>What Tespit Accesses</h2>
-    <p>To function, Tespit uses the macOS Accessibility API to inspect UI elements on screen. This requires the Accessibility permission granted by you in System Settings. Specifically:</p>
+    <h2>Screen Capture</h2>
+    <p>Tespit captures screenshots only when you explicitly initiate a capture using the in-app buttons. Each capture takes a single static image of a user-selected screen region or window using the macOS system screenshot tool. <strong>No background, continuous, or automatic screen recording occurs.</strong></p>
+    <p>The captured image is processed entirely on your device using Apple Vision (for text and element detection) and, on supported systems, Apple Intelligence via FoundationModels (for on-device AI analysis). <strong>No screenshot data, processed results, or any derived information is ever transmitted off your device.</strong></p>
+    <p>Screenshots are held in application memory during your session and are not persisted to disk. They are released when you close the app or delete the report.</p>
+
+    <h2>On-Device AI Processing</h2>
+    <p>Tespit uses Apple's native on-device frameworks for all AI functionality:</p>
     <ul>
-      <li>UI element properties (labels, roles, frames) are read in real time and displayed locally.</li>
-      <li>No screen content, UI data, or inspection results are transmitted off your device.</li>
-      <li>No data is logged, cached, or persisted beyond your active session.</li>
+      <li><strong>Apple Vision</strong> — Detects text elements, rectangular regions, and overlapping UI components from the captured screenshot. All processing runs locally via the Vision framework.</li>
+      <li><strong>Apple FoundationModels</strong> (macOS 26+) — Analyses detected elements using Apple Intelligence, Apple's on-device language model. This runs entirely on your Mac's Neural Engine. On systems that do not support Apple Intelligence, a deterministic heuristic analysis is used instead.</li>
     </ul>
-
-    <h2>Analytics &amp; Tracking</h2>
-    <p>Tespit does not include any analytics, telemetry, crash reporting, or tracking of any kind.</p>
-
-    <h2>Third-Party Services</h2>
-    <p>Tespit does not integrate with or send data to any third-party services.</p>
+    <p><strong>Tespit does not use any third-party AI services.</strong> No data is sent to OpenAI, Anthropic, Google, or any other external AI provider. All inference happens on-device.</p>
 
     <h2>Data Storage</h2>
-    <p>Tespit may store your preferences (such as window size and position) locally on your Mac using standard macOS mechanisms (UserDefaults). This data never leaves your device.</p>
+    <p>Tespit stores the following data locally on your Mac:</p>
+    <ul>
+      <li><strong>User preferences</strong> — Window size, capture count, and settings stored via standard macOS UserDefaults.</li>
+      <li><strong>Feedback ratings</strong> — If you rate a report as accurate or inaccurate, this rating is saved to <code>~/Library/Application Support/Tespit/feedback.json</code>. This file contains only ratings and truncated element summaries (no screenshots).</li>
+      <li><strong>Bug reports &amp; screenshots</strong> — Held in memory only during your active session. Not written to disk. Released when you close the app.</li>
+    </ul>
+    <p>No data is stored on any server, cloud service, or external location.</p>
+
+    <h2>Third-Party Services</h2>
+    <p>Tespit does not integrate with, send data to, or receive data from any third-party services. There are no analytics SDKs, crash reporters, advertising frameworks, or tracking libraries embedded in the app.</p>
+
+    <h2>Analytics &amp; Tracking</h2>
+    <p>Tespit does not include any analytics, telemetry, crash reporting, or tracking of any kind. No usage data is transmitted off your device.</p>
 
     <h2>Children's Privacy</h2>
     <p>Tespit does not collect any personal information from anyone, including children under 13.</p>

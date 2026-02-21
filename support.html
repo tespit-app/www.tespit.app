@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support — Tespit</title>
+  <meta name="description" content="Get help with Tespit, the AI-powered UI bug detection tool for macOS.">
+  <link rel="icon" type="image/png" href="/assets/app-icon.png">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --green: #7ad328;
+      --green-dim: #5a9e1e;
+      --bg: #09090b;
+      --bg-card: #111113;
+      --bg-subtle: #18181b;
+      --text: #fafafa;
+      --text-secondary: #a1a1aa;
+      --text-dim: #71717a;
+      --border: rgba(255, 255, 255, 0.06);
+      --border-hover: rgba(255, 255, 255, 0.1);
+      --radius: 16px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 0 32px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(9, 9, 11, 0.7);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .nav-brand img {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+    }
+
+    .nav-brand span {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 120px 32px 80px;
+    }
+
+    .content h1 {
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+    }
+
+    .content .subtitle {
+      color: var(--text-dim);
+      font-size: 18px;
+      margin-bottom: 48px;
+      line-height: 1.6;
+    }
+
+    .content h2 {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      margin-top: 40px;
+      margin-bottom: 12px;
+    }
+
+    .content p {
+      color: var(--text-secondary);
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .content strong {
+      color: var(--text);
+    }
+
+    .content a {
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    .content a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin-bottom: 32px;
+      transition: border-color 0.2s;
+    }
+
+    .contact-card:hover {
+      border-color: var(--border-hover);
+    }
+
+    .contact-card h3 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .contact-card p {
+      color: var(--text-dim);
+      font-size: 15px;
+      margin-bottom: 0;
+    }
+
+    .contact-card a.email-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      padding: 10px 20px;
+      background: var(--green);
+      color: #000;
+      font-weight: 600;
+      font-size: 14px;
+      border-radius: 10px;
+      transition: background 0.2s;
+    }
+
+    .contact-card a.email-link:hover {
+      background: #8de035;
+      text-decoration: none;
+    }
+
+    .faq-item {
+      margin-bottom: 24px;
+    }
+
+    .faq-item h3 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .faq-item p {
+      color: var(--text-dim);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .req-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .req-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .req-card .label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 6px;
+    }
+
+    .req-card .value {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .req-card .note {
+      color: var(--text-dim);
+      font-size: 14px;
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 32px;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 13px;
+    }
+
+    footer a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--text);
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .content { padding: 100px 20px 60px; }
+      .content h1 { font-size: 30px; }
+      .req-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-brand">
+      <img src="/assets/app-icon.png" alt="Tespit">
+      <span>tespit</span>
+    </a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/privacy">Privacy</a>
+      <a href="https://github.com/tespit-app" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </nav>
+
+  <main class="content">
+    <h1>Support</h1>
+    <p class="subtitle">Need help with Tespit? We're here to help.</p>
+
+    <div class="contact-card">
+      <h3>Contact Us</h3>
+      <p>For bug reports, feature requests, or any questions about Tespit, reach out via email. We typically respond within 24 hours.</p>
+      <a href="mailto:hi@alp.me?subject=Tespit%20Support" class="email-link">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        hi@alp.me
+      </a>
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>Does Tespit send my screenshots to the cloud?</h3>
+      <p>No. All processing happens entirely on your Mac. Screenshots are analysed using Apple Vision and Apple Intelligence (FoundationModels) — both run locally on your device. No data ever leaves your Mac.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Does Tespit use any third-party AI services?</h3>
+      <p>No. Tespit exclusively uses Apple's native on-device frameworks. No data is sent to OpenAI, Anthropic, Google, or any other external provider.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What happens to my screenshots after analysis?</h3>
+      <p>Screenshots are held in application memory during your session only. They are never written to disk and are released when you close the app or delete the report.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Why does the AI analysis seem limited on my Mac?</h3>
+      <p>Full AI-powered analysis requires macOS 26 or later with Apple Intelligence enabled. On older systems, Tespit uses a deterministic heuristic analysis that detects overlapping elements and generates structured reports without AI. Both modes are fully functional and private.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How do I grant screen capture permission?</h3>
+      <p>Tespit uses macOS's native interactive screen capture (the same crosshair as Command+Shift+4). On most systems, this works without additional permissions. If prompted, grant screen recording access in System Settings > Privacy & Security > Screen Recording.</p>
+    </div>
+
+    <h2>System Requirements</h2>
+
+    <div class="req-grid">
+      <div class="req-card">
+        <div class="label">Minimum</div>
+        <div class="value">macOS 15.0+</div>
+        <div class="note">Sequoia or later. Screen capture, Vision detection, and deterministic bug reports.</div>
+      </div>
+      <div class="req-card">
+        <div class="label">Recommended</div>
+        <div class="value">macOS 26+</div>
+        <div class="note">Apple Intelligence with on-device LLM reasoning. Falls back gracefully on older systems.</div>
+      </div>
+    </div>
+
+    <h2>Privacy</h2>
+    <p>For full details on how Tespit handles your data, please read our <a href="/privacy">Privacy Policy</a>.</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Tespit. Built for macOS by <a href="https://alp.me" target="_blank" rel="noopener">Alp Ozcan</a>.</p>
+  </footer>
+
+</body>
+</html>
