@@ -37,9 +37,9 @@ Screen Capture  →  Vision Detection  →  On-Device Reasoning  →  Bug Report
 | Minimum | macOS 15.0+ |
 | Apple Intelligence | macOS 26+ _(optional — deterministic fallback on older systems)_ |
 
-### Coming soon
+### Download
 
-🍎 Mac App Store — _stay tuned_
+🍎 [Download on the Mac App Store](https://apps.apple.com/tr/app/tespit/id6759353788?mt=12)
 
 ---
 
